@@ -2,15 +2,15 @@
 
 namespace MinimalAPI
 {
-    // Use this class as a simulation rather than querying an actual DB
+    // Use this class to simulate calling a DB
     public class DatabaseSimulator
     {
-        private List<Book> _bookList = new List<Book>
+        private readonly List<Book> _bookList = new()
         {
-            new Book(1, "Harry Potter 1", 1999, new DateTime(1999, 01, 01), 15),
-            new Book(2, "Harry Potter 2", 1999, new DateTime(2000, 01, 01), 15),
-            new Book(3, "Lord of the Rings", 1950, new DateTime(1950, 01, 01), 10),
-            new Book(4, "Mistborn", 2010, new DateTime(2010, 01, 01), 20)
+            new Book(1, "Harry Potter and the Philosopher's Stone", 1997, new DateTime(1997, 06, 26), 15),
+            new Book(2, "Harry Potter and the Chamber of Secrets", 1998, new DateTime(1998, 07, 02), 15),
+            new Book(3, "Lord of the Rings", 1950, new DateTime(1954, 07, 29), 10),
+            new Book(4, "Mistborn", 2010, new DateTime(2006, 07, 17), 20)
         };
 
         public async Task<Book> GetBook(int id)
